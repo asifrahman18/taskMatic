@@ -58,7 +58,7 @@ const SignIn = () => {
     }
 
   return (
-    <Card className="w-full">
+    <Card className="w-full border-primary">
       <CardHeader>
         <CardTitle>Sign In</CardTitle>
       </CardHeader>
@@ -93,7 +93,7 @@ const SignIn = () => {
         <Separator className="my-6" />
         <CardTitle>Or Sign In with</CardTitle>
         <div className="flex justify-between my-6">
-          <Button className="w-full" variant={"outline"} onClick={handleGoogleSubmit}>
+          <Button className="w-full border-blue-700" variant="outline" onClick={handleGoogleSubmit}>
             Google
           </Button>
         </div>

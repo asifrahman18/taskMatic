@@ -52,7 +52,7 @@ const TaskList: React.FC<{ id: string }> = (props) => {
   };
 
   return (
-    <Card className="p-5 mt-5 bg-purple-50">
+    <Card className="p-5 my-5 bg-purple-50">
       <ul>
         {task.map((item: any) => (
             <li key={item.key}>
