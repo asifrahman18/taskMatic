@@ -1,16 +1,12 @@
-import { useEffect, useState } from "react";
-import firebase_app from './firebase'
-import { FirebaseError } from 'firebase/app'
+import { FirebaseError } from 'firebase/app';
 import {
-  signInWithEmailAndPassword,
-  getAuth,
   GoogleAuthProvider,
+  getAuth,
+  signInWithEmailAndPassword,
   signInWithPopup,
-  signOut,
-  User,
-  updateProfile,
-} from 'firebase/auth'
-import { ref, uploadBytes, getDownloadURL, getStorage } from 'firebase/storage'
+  signOut
+} from 'firebase/auth';
+import firebase_app from './firebase';
 
 export const auth = getAuth(firebase_app)
 
