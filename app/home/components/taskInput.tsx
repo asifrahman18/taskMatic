@@ -25,7 +25,7 @@ const TaskInput: React.FC<{ id: string }> = (props) => {
   }
 
   return (
-    <Card className="p-5 mt-5">
+    <Card className="p-5 mt-5 border-primary">
       <form onSubmit={createTask}>
         <Label htmlFor="title" className="text-3xl my-2">Enter Your Task</Label>
         <Input
