@@ -33,7 +33,7 @@ const TaskList: React.FC<{ id: string }> = (props) => {
       setTask(todoArr);
     });
     return () => unsubscribe();
-  },);
+  },[props.id]);
 
   const completeHandler = async (id: string) => {
     await updateDoc(doc(db, `${props.id}`, id), {
@@ -52,12 +52,12 @@ const TaskList: React.FC<{ id: string }> = (props) => {
   };
 
   return (
-    <Card className="p-5 mt-5 bg-purple-50">
+    <Card className="p-5 my-5 bg-purple-50">
       <ul>
         {task.map((item: any) => (
             <li key={item.key}>
               {item.status === "Done" ? (
-                <Card className="my-3 bg-red-50">
+                <Card className="my-3 bg-red-50 shadow-inner">
                   <div>
                     <CardHeader className="text-xl xl:text-5xl line-through">
                       {item.title}
@@ -74,7 +74,7 @@ const TaskList: React.FC<{ id: string }> = (props) => {
                   </div>
                   <CardContent>
                     <CardDescription>
-                      {item.status === "done" ? (
+                      {item.status === "Done" ? (
                         <Badge variant="destructive" className="text-md">
                           {item.status}
                         </Badge>
@@ -87,7 +87,7 @@ const TaskList: React.FC<{ id: string }> = (props) => {
                   </CardContent>
                 </Card>
               ) : (
-                <Card className="my-3 bg-green-50">
+                <Card className="my-3 bg-green-50 shadow-xl">
                   <div>
                     <CardHeader className="text-xl xl:text-5xl">
                       {item.title}
